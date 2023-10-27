@@ -35,7 +35,7 @@ namespace SoundPanelProto
 
                 PanelContainer5.Controls.Add(panel1);
 
-                dock();
+                dock();//try
             }
         }
 

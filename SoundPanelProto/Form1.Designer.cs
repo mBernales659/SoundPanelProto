@@ -156,7 +156,7 @@
             LoadablePnl1.BackColor = SystemColors.GradientInactiveCaption;
             LoadablePnl1.Controls.Add(button2);
             LoadablePnl1.Controls.Add(FilenameLbl1);
-            LoadablePnl1.Location = new Point(342, 65);
+            LoadablePnl1.Location = new Point(343, 65);
             LoadablePnl1.Name = "LoadablePnl1";
             LoadablePnl1.Size = new Size(139, 218);
             LoadablePnl1.TabIndex = 3;
