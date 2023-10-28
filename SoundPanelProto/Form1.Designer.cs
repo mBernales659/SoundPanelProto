@@ -36,40 +36,42 @@
             PanelContainer4 = new Panel();
             PanelContainer2 = new Panel();
             PanelContainer3 = new Panel();
-            panel1 = new Panel();
+            AddSoundPnl = new Panel();
+            tableLayoutPanel1 = new TableLayoutPanel();
             LoadablePnl3 = new Panel();
+            pictureBox6 = new PictureBox();
             button2 = new Button();
             FilenameLbl3 = new Label();
             LoadablePnl4 = new Panel();
+            pictureBox4 = new PictureBox();
             button3 = new Button();
             FilenameLbl4 = new Label();
             LoadablePnl5 = new Panel();
+            pictureBox3 = new PictureBox();
             button4 = new Button();
             FilenameLbl5 = new Label();
             LoadablePnl1 = new Panel();
+            pictureBox2 = new PictureBox();
             button5 = new Button();
             FilenameLbl1 = new Label();
             LoadablePnl2 = new Panel();
+            pictureBox5 = new PictureBox();
             button6 = new Button();
             FilenameLbl2 = new Label();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            pictureBox6 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             PanelContainer3.SuspendLayout();
-            panel1.SuspendLayout();
+            AddSoundPnl.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             LoadablePnl3.SuspendLayout();
-            LoadablePnl4.SuspendLayout();
-            LoadablePnl5.SuspendLayout();
-            LoadablePnl1.SuspendLayout();
-            LoadablePnl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            LoadablePnl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            LoadablePnl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            LoadablePnl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            LoadablePnl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // PanelContainer1
@@ -85,9 +87,9 @@
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.BackgroundImage = Properties.Resources._default;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(32, 85);
+            pictureBox1.Location = new Point(38, 91);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(96, 90);
+            pictureBox1.Size = new Size(82, 74);
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
@@ -137,20 +139,37 @@
             // PanelContainer3
             // 
             PanelContainer3.BorderStyle = BorderStyle.FixedSingle;
-            PanelContainer3.Controls.Add(panel1);
+            PanelContainer3.Controls.Add(AddSoundPnl);
             PanelContainer3.Location = new Point(331, 153);
             PanelContainer3.Name = "PanelContainer3";
             PanelContainer3.Size = new Size(161, 259);
             PanelContainer3.TabIndex = 4;
             // 
-            // panel1
+            // AddSoundPnl
             // 
-            panel1.Controls.Add(pictureBox1);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(159, 257);
-            panel1.TabIndex = 5;
+            AddSoundPnl.Controls.Add(tableLayoutPanel1);
+            AddSoundPnl.Dock = DockStyle.Fill;
+            AddSoundPnl.Location = new Point(0, 0);
+            AddSoundPnl.Name = "AddSoundPnl";
+            AddSoundPnl.Size = new Size(159, 257);
+            AddSoundPnl.TabIndex = 5;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17.0532055F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 65.89359F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17.0532074F));
+            tableLayoutPanel1.Controls.Add(pictureBox1, 1, 1);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 17.998558F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 64.00288F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 17.998558F));
+            tableLayoutPanel1.Size = new Size(159, 257);
+            tableLayoutPanel1.TabIndex = 2;
             // 
             // LoadablePnl3
             // 
@@ -162,6 +181,17 @@
             LoadablePnl3.Name = "LoadablePnl3";
             LoadablePnl3.Size = new Size(139, 218);
             LoadablePnl3.TabIndex = 3;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Anchor = AnchorStyles.None;
+            pictureBox6.BackgroundImage = Properties.Resources._default;
+            pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox6.Location = new Point(44, 21);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(58, 47);
+            pictureBox6.TabIndex = 9;
+            pictureBox6.TabStop = false;
             // 
             // button2
             // 
@@ -194,6 +224,17 @@
             LoadablePnl4.Size = new Size(115, 180);
             LoadablePnl4.TabIndex = 6;
             // 
+            // pictureBox4
+            // 
+            pictureBox4.Anchor = AnchorStyles.None;
+            pictureBox4.BackgroundImage = Properties.Resources._default;
+            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox4.Location = new Point(28, 25);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(58, 47);
+            pictureBox4.TabIndex = 7;
+            pictureBox4.TabStop = false;
+            // 
             // button3
             // 
             button3.Anchor = AnchorStyles.None;
@@ -224,6 +265,17 @@
             LoadablePnl5.Name = "LoadablePnl5";
             LoadablePnl5.Size = new Size(101, 151);
             LoadablePnl5.TabIndex = 7;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Anchor = AnchorStyles.None;
+            pictureBox3.BackgroundImage = Properties.Resources._default;
+            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox3.Location = new Point(24, 25);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(58, 47);
+            pictureBox3.TabIndex = 6;
+            pictureBox3.TabStop = false;
             // 
             // button4
             // 
@@ -256,6 +308,17 @@
             LoadablePnl1.Size = new Size(101, 151);
             LoadablePnl1.TabIndex = 8;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.None;
+            pictureBox2.BackgroundImage = Properties.Resources._default;
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox2.Location = new Point(20, 25);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(58, 47);
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
+            // 
             // button5
             // 
             button5.Anchor = AnchorStyles.None;
@@ -272,9 +335,9 @@
             FilenameLbl1.AutoSize = true;
             FilenameLbl1.Location = new Point(35, 121);
             FilenameLbl1.Name = "FilenameLbl1";
-            FilenameLbl1.Size = new Size(25, 15);
+            FilenameLbl1.Size = new Size(27, 15);
             FilenameLbl1.TabIndex = 5;
-            FilenameLbl1.Text = "123";
+            FilenameLbl1.Text = "null";
             // 
             // LoadablePnl2
             // 
@@ -286,6 +349,17 @@
             LoadablePnl2.Name = "LoadablePnl2";
             LoadablePnl2.Size = new Size(115, 180);
             LoadablePnl2.TabIndex = 9;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Anchor = AnchorStyles.None;
+            pictureBox5.BackgroundImage = Properties.Resources._default;
+            pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox5.Location = new Point(24, 25);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(58, 47);
+            pictureBox5.TabIndex = 8;
+            pictureBox5.TabStop = false;
             // 
             // button6
             // 
@@ -303,64 +377,9 @@
             FilenameLbl2.AutoSize = true;
             FilenameLbl2.Location = new Point(41, 123);
             FilenameLbl2.Name = "FilenameLbl2";
-            FilenameLbl2.Size = new Size(47, 15);
+            FilenameLbl2.Size = new Size(27, 15);
             FilenameLbl2.TabIndex = 5;
-            FilenameLbl2.Text = "123qwe";
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = AnchorStyles.None;
-            pictureBox2.BackgroundImage = Properties.Resources._default;
-            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox2.Location = new Point(20, 25);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(58, 47);
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Anchor = AnchorStyles.None;
-            pictureBox3.BackgroundImage = Properties.Resources._default;
-            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox3.Location = new Point(24, 25);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(58, 47);
-            pictureBox3.TabIndex = 6;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Anchor = AnchorStyles.None;
-            pictureBox4.BackgroundImage = Properties.Resources._default;
-            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox4.Location = new Point(28, 25);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(58, 47);
-            pictureBox4.TabIndex = 7;
-            pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Anchor = AnchorStyles.None;
-            pictureBox5.BackgroundImage = Properties.Resources._default;
-            pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox5.Location = new Point(24, 25);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(58, 47);
-            pictureBox5.TabIndex = 8;
-            pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.Anchor = AnchorStyles.None;
-            pictureBox6.BackgroundImage = Properties.Resources._default;
-            pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox6.Location = new Point(44, 21);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(58, 47);
-            pictureBox6.TabIndex = 9;
-            pictureBox6.TabStop = false;
+            FilenameLbl2.Text = "null";
             // 
             // Form1
             // 
@@ -377,29 +396,30 @@
             Controls.Add(LoadablePnl5);
             Controls.Add(LoadablePnl3);
             Controls.Add(LoadablePnl4);
-            Controls.Add(LoadablePnl1);
             Controls.Add(LoadablePnl2);
+            Controls.Add(LoadablePnl1);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             PanelContainer3.ResumeLayout(false);
-            panel1.ResumeLayout(false);
+            AddSoundPnl.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
             LoadablePnl3.ResumeLayout(false);
             LoadablePnl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             LoadablePnl4.ResumeLayout(false);
             LoadablePnl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             LoadablePnl5.ResumeLayout(false);
             LoadablePnl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             LoadablePnl1.ResumeLayout(false);
             LoadablePnl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             LoadablePnl2.ResumeLayout(false);
             LoadablePnl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
         }
 
@@ -413,7 +433,7 @@
         private Panel PanelContainer2;
         private Panel PanelContainer3;
         private PictureBox pictureBox1;
-        private Panel panel1;
+        private Panel AddSoundPnl;
         private Panel LoadablePnl3;
         private Button button2;
         private Label FilenameLbl3;
@@ -434,5 +454,6 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox5;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }
