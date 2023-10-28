@@ -10,12 +10,9 @@ namespace SoundPanelProto
         private void dock()
         {
             panel1.Dock = DockStyle.Fill;
-            //panel2.Dock = DockStyle.Fill;
-            //panel3.Dock = DockStyle.Fill;
-            //panel4.Dock = DockStyle.Fill;
-            //panel5.Dock = DockStyle.Fill;
 
             LoadablePnl1.Dock = DockStyle.Fill;
+            LoadablePnl2.Dock = DockStyle.Fill;
         }
 
         private void Next_Btn_Click(object sender, EventArgs e)
@@ -35,7 +32,7 @@ namespace SoundPanelProto
 
                 PanelContainer5.Controls.Add(panel1);
 
-                dock();//try
+                dock();
             }
         }
 
@@ -48,21 +45,33 @@ namespace SoundPanelProto
         {
             if (FilenameLbl1.Text != "null")
             {
-                PanelContainer3.Controls.Add(LoadablePnl1);
+                PanelContainer1.Controls.Add(LoadablePnl1);
                 LoadablePnl1.Visible = true;
 
-                PanelContainer4.Controls.Add(panel1);
-                PanelContainer3.Controls.Remove(panel1);
-
+                
             }
             else
             {
-
                 LoadablePnl1.Visible = false;
             }
 
+
+            if (FilenameLbl2.Text != "null")
+            {
+                PanelContainer4.Controls.Add(LoadablePnl2);
+                LoadablePnl2.Visible = true;
+
+                PanelContainer2.Controls.Add(LoadablePnl2);
+            }
+            else
+            {
+                LoadablePnl2.Visible = false;
+            }
+
             dock();
+
         }
+
 
 
     }
