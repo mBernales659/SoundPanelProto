@@ -77,5 +77,58 @@ namespace SoundPanelProto
 
             return filePath;
         }
+
+        public void AvatarRetriever(string SoundTitle, PictureBox pictureBox)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT ImageData FROM Sounds WHERE SoundTitle = @SoundTitle";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@SoundTitle", SoundTitle);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            byte[] imageBytes = (byte[])reader["ImageData"];
+
+                            if (imageBytes != null && imageBytes.Length > 0)
+                            {
+                                using (MemoryStream ms = new MemoryStream(imageBytes))
+                                {
+                                    Image image = Image.FromStream(ms);
+                                    pictureBox.Image = image;
+
+                                    Image resizedImage = new Bitmap(image, pictureBox.Width, pictureBox.Height);
+
+                                    pictureBox.Image = resizedImage;
+
+                                }
+                            }
+                            else
+                            {
+                                pictureBox.Image = null;
+                                MessageBox.Show("Walang larawan na kaugnay sa SoundTitle: " + SoundTitle);
+                            }
+                        }
+                        else
+                        {
+                            pictureBox.Image = null;
+                            MessageBox.Show("Hindi makita ang sound na may filename: " + SoundTitle);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+
     }
 }

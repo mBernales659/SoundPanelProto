@@ -36,7 +36,7 @@
             PanelContainer4 = new Panel();
             PanelContainer2 = new Panel();
             DefaultSoundPnl2 = new Panel();
-            DefaultSoundFileNameLbl1 = new Label();
+            DefaultSoundFileNameLbl2 = new Label();
             DefaultSoundPicbox2 = new PictureBox();
             DefaultSoundBtn1 = new Button();
             PanelContainer3 = new Panel();
@@ -105,11 +105,12 @@
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.BackgroundImage = Properties.Resources.addbtn;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(44, 95);
+            pictureBox1.Location = new Point(44, 94);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(69, 66);
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // Prev_btn
             // 
@@ -162,32 +163,32 @@
             // 
             // DefaultSoundPnl2
             // 
-            DefaultSoundPnl2.Anchor = AnchorStyles.None;
             DefaultSoundPnl2.BorderStyle = BorderStyle.FixedSingle;
-            DefaultSoundPnl2.Controls.Add(DefaultSoundFileNameLbl1);
+            DefaultSoundPnl2.Controls.Add(DefaultSoundFileNameLbl2);
             DefaultSoundPnl2.Controls.Add(DefaultSoundPicbox2);
             DefaultSoundPnl2.Controls.Add(DefaultSoundBtn1);
-            DefaultSoundPnl2.Location = new Point(19, 30);
+            DefaultSoundPnl2.Dock = DockStyle.Fill;
+            DefaultSoundPnl2.Location = new Point(0, 0);
             DefaultSoundPnl2.Name = "DefaultSoundPnl2";
-            DefaultSoundPnl2.Size = new Size(109, 169);
+            DefaultSoundPnl2.Size = new Size(137, 216);
             DefaultSoundPnl2.TabIndex = 1;
             // 
-            // DefaultSoundFileNameLbl1
+            // DefaultSoundFileNameLbl2
             // 
-            DefaultSoundFileNameLbl1.Anchor = AnchorStyles.None;
-            DefaultSoundFileNameLbl1.AutoSize = true;
-            DefaultSoundFileNameLbl1.Location = new Point(15, 92);
-            DefaultSoundFileNameLbl1.Name = "DefaultSoundFileNameLbl1";
-            DefaultSoundFileNameLbl1.Size = new Size(38, 15);
-            DefaultSoundFileNameLbl1.TabIndex = 16;
-            DefaultSoundFileNameLbl1.Text = "label3";
+            DefaultSoundFileNameLbl2.Anchor = AnchorStyles.None;
+            DefaultSoundFileNameLbl2.AutoSize = true;
+            DefaultSoundFileNameLbl2.Location = new Point(29, 116);
+            DefaultSoundFileNameLbl2.Name = "DefaultSoundFileNameLbl2";
+            DefaultSoundFileNameLbl2.Size = new Size(38, 15);
+            DefaultSoundFileNameLbl2.TabIndex = 16;
+            DefaultSoundFileNameLbl2.Text = "label3";
             // 
             // DefaultSoundPicbox2
             // 
             DefaultSoundPicbox2.Anchor = AnchorStyles.None;
             DefaultSoundPicbox2.BackgroundImage = Properties.Resources._default;
             DefaultSoundPicbox2.BackgroundImageLayout = ImageLayout.Stretch;
-            DefaultSoundPicbox2.Location = new Point(29, 19);
+            DefaultSoundPicbox2.Location = new Point(43, 43);
             DefaultSoundPicbox2.Name = "DefaultSoundPicbox2";
             DefaultSoundPicbox2.Size = new Size(46, 44);
             DefaultSoundPicbox2.TabIndex = 15;
@@ -196,7 +197,7 @@
             // DefaultSoundBtn1
             // 
             DefaultSoundBtn1.Anchor = AnchorStyles.None;
-            DefaultSoundBtn1.Location = new Point(15, 123);
+            DefaultSoundBtn1.Location = new Point(29, 147);
             DefaultSoundBtn1.Name = "DefaultSoundBtn1";
             DefaultSoundBtn1.Size = new Size(75, 23);
             DefaultSoundBtn1.TabIndex = 15;
@@ -234,8 +235,8 @@
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 17.998558F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 64.00288F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 17.5097275F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 64.20233F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 17.998558F));
             tableLayoutPanel1.Size = new Size(159, 257);
             tableLayoutPanel1.TabIndex = 2;
@@ -623,7 +624,7 @@
         private Button DefaultSoundBtn1;
         private PictureBox DefaultSoundPicbox2;
         private PictureBox pictureBox8;
-        private Label DefaultSoundFileNameLbl1;
+        private Label DefaultSoundFileNameLbl2;
         private PictureBox soundpicbox;
     }
 }

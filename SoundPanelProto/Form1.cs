@@ -41,6 +41,7 @@ namespace SoundPanelProto
             {
                 PanelContainer3.Controls.Remove(AddSoundPnl);
 
+                PanelContainer3.Controls.Add(DefaultSoundPnl2);
                 PanelContainer4.Controls.Add(AddSoundPnl);
 
                 dock();
@@ -50,6 +51,7 @@ namespace SoundPanelProto
             {
                 PanelContainer4.Controls.Remove(AddSoundPnl);
 
+                PanelContainer4.Controls.Add(DefaultSoundPnl2);
                 PanelContainer5.Controls.Add(AddSoundPnl);
 
                 dock();
@@ -66,7 +68,16 @@ namespace SoundPanelProto
         {
             connection = new SqlConnection(connectionString);
 
+            media_retriever mr = new media_retriever();
+
             train();
+
+            string SoundTitleLabel2 = DefaultSoundFileNameLbl2.Text;
+            mr.AvatarRetriever(SoundTitleLabel2, DefaultSoundPicbox2);
+
+
+
+
 
             //kung ang filename label sa loadable panel ay not equal sa null ay iaadd niya ito sa panelconatiner
 
@@ -138,9 +149,9 @@ namespace SoundPanelProto
 
 
         string selectedFilePath = string.Empty;
-        private void tableLayoutPanel1_Click(object sender, EventArgs e)
-        {
 
+        private void opnfiledialog()
+        {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Sound Files|*.mp3;*.wav;*.ogg;*.flac|All Files|*.*";
             openFileDialog.Multiselect = false;
@@ -156,6 +167,12 @@ namespace SoundPanelProto
                 panel1.BringToFront();
 
             }
+        }
+
+        private void tableLayoutPanel1_Click(object sender, EventArgs e)
+        {
+
+            opnfiledialog();
 
         }
 
@@ -250,11 +267,11 @@ namespace SoundPanelProto
             if (!string.IsNullOrEmpty(defaultFileName))
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(defaultFileName);
-                DefaultSoundFileNameLbl1.Text = fileNameWithoutExtension;
+                DefaultSoundFileNameLbl2.Text = fileNameWithoutExtension;
             }
             else
             {
-                DefaultSoundFileNameLbl1.Text = "No Sound Selected";
+                DefaultSoundFileNameLbl2.Text = "No Sound Selected";
             }
 
         }
@@ -278,6 +295,11 @@ namespace SoundPanelProto
                     }
                 }
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            opnfiledialog();
         }
     }
 }
