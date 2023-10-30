@@ -112,13 +112,13 @@ namespace SoundPanelProto
                             else
                             {
                                 pictureBox.Image = null;
-                                MessageBox.Show("Walang larawan na kaugnay sa SoundTitle: " + SoundTitle);
+                                MessageBox.Show("There are no images associated with SoundTitle: " + SoundTitle);
                             }
                         }
                         else
                         {
                             pictureBox.Image = null;
-                            MessageBox.Show("Hindi makita ang sound na may filename: " + SoundTitle);
+                            MessageBox.Show("Cannot find sound with SoundTitle: " + SoundTitle);
                         }
                     }
                 }

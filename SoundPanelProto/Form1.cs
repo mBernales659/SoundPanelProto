@@ -68,6 +68,17 @@ namespace SoundPanelProto
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            PanelContainer1.Controls.Clear();
+            PanelContainer2.Controls.Clear();
+            PanelContainer3.Controls.Clear();
+            PanelContainer4.Controls.Clear();
+            PanelContainer5.Controls.Clear();
+
+            PanelContainer3.Controls.Add(AddSoundPnl);
+            PanelContainer2.Controls.Add(DefaultSoundPnl2);
+            PanelContainer1.Controls.Add(DefaultSoundPnl1);
+
+
             connection = new SqlConnection(connectionString);
 
             media_retriever mr = new media_retriever();
@@ -76,10 +87,6 @@ namespace SoundPanelProto
 
             string SoundTitleLabel2 = DefaultSoundFileNameLbl2.Text;
             mr.AvatarRetriever(SoundTitleLabel2, DefaultSoundPicbox2);
-
-
-
-
 
             //kung ang filename label sa loadable panel ay not equal sa null ay iaadd niya ito sa panelconatiner
 
