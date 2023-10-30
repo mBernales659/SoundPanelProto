@@ -1,7 +1,17 @@
+using System.Data.SqlClient;
+using System.Numerics;
+using System.Windows.Forms;
+using WMPLib;
+
+
 namespace SoundPanelProto
 {
     public partial class Form1 : Form
     {
+
+        SqlConnection connection;
+        string connectionString = "Data Source=DESKTOP-VIJ33BO\\SQLEXPRESS; Initial Catalog=Mellowdy; Integrated Security=True";
+        WMPLib.WindowsMediaPlayer Player = new WMPLib.WindowsMediaPlayer();
         public Form1()
         {
             InitializeComponent();
@@ -10,6 +20,8 @@ namespace SoundPanelProto
         private void dock()
         {
             AddSoundPnl.Dock = DockStyle.Fill;
+
+            DefaultSoundPnl2.Dock = DockStyle.Fill;
 
             LoadablePnl1.Dock = DockStyle.Fill;
             LoadablePnl2.Dock = DockStyle.Fill;
@@ -52,6 +64,10 @@ namespace SoundPanelProto
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            connection = new SqlConnection(connectionString);
+
+            train();
+
             //kung ang filename label sa loadable panel ay not equal sa null ay iaadd niya ito sa panelconatiner
 
             if (FilenameLbl1.Text != "null")
@@ -120,5 +136,148 @@ namespace SoundPanelProto
             dock();
         }
 
+
+        string selectedFilePath = string.Empty;
+        private void tableLayoutPanel1_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Sound Files|*.mp3;*.wav;*.ogg;*.flac|All Files|*.*";
+            openFileDialog.Multiselect = false;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                selectedFilePath = openFileDialog.FileName; // I-assign ang selected file path sa variable na ito.
+
+                // I-display ang pangalang ng file sa Label1.
+                label1.Text = Path.GetFileName(selectedFilePath);
+
+                panel1.Visible = true;
+                panel1.BringToFront();
+
+            }
+
+        }
+
+        private void InsertBtn_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(selectedFilePath))
+            {
+                byte[] fileData = File.ReadAllBytes(selectedFilePath);
+
+
+                byte[] imageBytes = null; // Initiate it as null.
+
+                // Check if PictureBox7 has an image
+                if (soundpicbox.Image != null)
+                {
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        soundpicbox.Image.Save(ms, soundpicbox.Image.RawFormat);
+                        imageBytes = ms.ToArray();
+                    }
+                }
+
+                connection.Open();
+
+                // Get the highest SoundID
+                SqlCommand getMaxSoundID = new SqlCommand("SELECT MAX(SoundID) FROM Sounds", connection);
+                object result = getMaxSoundID.ExecuteScalar();
+
+                int maxSoundID;
+
+                if (result != DBNull.Value)
+                {
+                    maxSoundID = Convert.ToInt32(result);
+                }
+                else
+                {
+                    maxSoundID = 0;
+                }
+
+                // Create a new SoundID
+                int newSoundID = maxSoundID + 1;
+                string soundTitle = textBox1.Text;
+
+
+                SqlCommand cmd = new SqlCommand("INSERT INTO Sounds (FileName, SoundTitle, SoundData, ImageData) VALUES (@FileName, @SoundTitle, @SoundData, @ImageData)", connection);
+                cmd.Parameters.AddWithValue("@FileName", Path.GetFileName(selectedFilePath));
+                cmd.Parameters.AddWithValue("@SoundTitle", soundTitle);
+                cmd.Parameters.AddWithValue("@SoundData", fileData);
+                cmd.Parameters.AddWithValue("@ImageData", imageBytes); // Add parameter for ImageData
+                cmd.ExecuteNonQuery();
+
+                connection.Close();
+
+                if (newSoundID > 0)
+                {
+                    MessageBox.Show(soundTitle + " has inserted successfully.");
+                    panel1.SendToBack();
+                    panel1.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Failed to insert the sound file.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select a sound file using TableLayoutPanel1 before clicking the Insert button.");
+            }
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void DefaultSoundBtn1_Click(object sender, EventArgs e)
+        {
+            media_retriever mr = new media_retriever();
+            int soundIDToPlay = 1;
+            mr.PlaySound(soundIDToPlay);
+        }
+
+        private void train()
+        {
+            media_retriever mr = new media_retriever();
+            int defaultSoundID = 1;
+
+
+            string defaultFileName = mr.GetFileNameBySoundID(defaultSoundID);
+
+
+            if (!string.IsNullOrEmpty(defaultFileName))
+            {
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(defaultFileName);
+                DefaultSoundFileNameLbl1.Text = fileNameWithoutExtension;
+            }
+            else
+            {
+                DefaultSoundFileNameLbl1.Text = "No Sound Selected";
+            }
+
+        }
+
+        private void soundpicbox_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        // I-load ang napiling larawan mula sa OpenFileDialog sa soundpicbox
+                        soundpicbox.Image = new Bitmap(openFileDialog.FileName);
+                        soundpicbox.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Hindi mabuksan ang larawan: " + ex.Message);
+                    }
+                }
+            }
+        }
     }
 }
