@@ -41,6 +41,7 @@ namespace SoundPanelProto
             {
                 PanelContainer3.Controls.Remove(AddSoundPnl);
 
+                PanelContainer2.Controls.Add(DefaultSoundPnl1);
                 PanelContainer3.Controls.Add(DefaultSoundPnl2);
                 PanelContainer4.Controls.Add(AddSoundPnl);
 
@@ -51,6 +52,7 @@ namespace SoundPanelProto
             {
                 PanelContainer4.Controls.Remove(AddSoundPnl);
 
+                PanelContainer3.Controls.Add(DefaultSoundPnl1);
                 PanelContainer4.Controls.Add(DefaultSoundPnl2);
                 PanelContainer5.Controls.Add(AddSoundPnl);
 
