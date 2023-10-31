@@ -27,6 +27,56 @@ namespace SoundPanelProto
             LoadablePnl2.Dock = DockStyle.Fill;
         }
 
+        private void Prev_btn_Click(object sender, EventArgs e)
+        {
+            if (DefaultSoundPnl1.Parent == PanelContainer3)
+            {
+                PanelContainer2.Controls.Add(DefaultSoundPnl1);
+                PanelContainer3.Controls.Add(DefaultSoundPnl2);
+                PanelContainer4.Controls.Add(DefaultSoundPnl3);
+                PanelContainer5.Controls.Add(DefaultSoundPnl4);
+            }
+            else if (DefaultSoundPnl1.Parent == PanelContainer2)
+            {
+                PanelContainer1.Controls.Add(DefaultSoundPnl1);
+                PanelContainer2.Controls.Add(DefaultSoundPnl2);
+                PanelContainer3.Controls.Add(DefaultSoundPnl3);
+                PanelContainer4.Controls.Add(DefaultSoundPnl4);
+                PanelContainer5.Controls.Add(DefaultSoundPnl5);
+            }
+
+
+            else if (DefaultSoundPnl5.Parent == PanelContainer5)
+            {
+                PanelContainer1.Controls.Remove(DefaultSoundPnl1);
+
+                PanelContainer1.Controls.Add(DefaultSoundPnl2);
+                PanelContainer2.Controls.Add(DefaultSoundPnl3);
+                PanelContainer3.Controls.Add(DefaultSoundPnl4);
+                PanelContainer4.Controls.Add(DefaultSoundPnl5);
+                PanelContainer5.Controls.Add(AddSoundPnl);
+            }
+
+            else if (DefaultSoundPnl5.Parent == PanelContainer4)
+            {
+                PanelContainer1.Controls.Remove(DefaultSoundPnl2);
+
+                PanelContainer1.Controls.Add(DefaultSoundPnl3);
+                PanelContainer2.Controls.Add(DefaultSoundPnl4);
+                PanelContainer3.Controls.Add(DefaultSoundPnl5);
+                PanelContainer4.Controls.Add(AddSoundPnl);
+            }
+
+            else if (DefaultSoundPnl5.Parent == PanelContainer3)
+            {
+                PanelContainer1.Controls.Remove(DefaultSoundPnl3);
+
+                PanelContainer1.Controls.Add(DefaultSoundPnl4);
+                PanelContainer2.Controls.Add(DefaultSoundPnl5);
+                PanelContainer3.Controls.Add(AddSoundPnl);
+            }
+
+        }
         private void Next_Btn_Click(object sender, EventArgs e)
         {
             if (LoadablePnl1.Parent == PanelContainer1)
@@ -37,27 +87,87 @@ namespace SoundPanelProto
                 dock();
             }
 
+            //default soundpanels 1st possition
+
             else if (AddSoundPnl.Parent == PanelContainer3)
             {
-                PanelContainer3.Controls.Remove(AddSoundPnl);
+                if (LoadablePnl1.Parent == PanelContainer2)
+                {
+                    PanelContainer4.Controls.Add(AddSoundPnl);
+                    PanelContainer3.Controls.Add(LoadablePnl1);
+                    PanelContainer2.Controls.Add(DefaultSoundPnl5);
+                    PanelContainer1.Controls.Add(DefaultSoundPnl4);
+                    dock();
+                }
 
-                PanelContainer2.Controls.Add(DefaultSoundPnl1);
-                PanelContainer3.Controls.Add(DefaultSoundPnl2);
-                PanelContainer4.Controls.Add(AddSoundPnl);
+                else
+                {
 
-                dock();
+                    PanelContainer3.Controls.Remove(AddSoundPnl);
+
+                    PanelContainer1.Controls.Add(DefaultSoundPnl3);
+                    PanelContainer2.Controls.Add(DefaultSoundPnl4);
+                    PanelContainer3.Controls.Add(DefaultSoundPnl5);
+                    PanelContainer4.Controls.Add(AddSoundPnl);
+                    dock();
+                }
             }
+
+            //default soundpanels 2nd possition
 
             else if (AddSoundPnl.Parent == PanelContainer4)
             {
-                PanelContainer4.Controls.Remove(AddSoundPnl);
+                PanelContainer3.Controls.Remove(AddSoundPnl);
 
-                PanelContainer3.Controls.Add(DefaultSoundPnl1);
-                PanelContainer4.Controls.Add(DefaultSoundPnl2);
+                PanelContainer1.Controls.Add(DefaultSoundPnl2);
+                PanelContainer2.Controls.Add(DefaultSoundPnl3);
+                PanelContainer3.Controls.Add(DefaultSoundPnl4);
+                PanelContainer4.Controls.Add(DefaultSoundPnl5);
                 PanelContainer5.Controls.Add(AddSoundPnl);
 
                 dock();
             }
+
+            //default soundpanels 3rd possition
+
+            else if (AddSoundPnl.Parent == PanelContainer5)
+            {
+                PanelContainer5.Controls.Remove(AddSoundPnl);
+
+                PanelContainer1.Controls.Add(DefaultSoundPnl1);
+                PanelContainer2.Controls.Add(DefaultSoundPnl2);
+                PanelContainer3.Controls.Add(DefaultSoundPnl3);
+                PanelContainer4.Controls.Add(DefaultSoundPnl4);
+                PanelContainer5.Controls.Add(DefaultSoundPnl5);
+
+                dock();
+            }
+
+            else if (DefaultSoundPnl1.Parent == PanelContainer1)
+            {
+                PanelContainer1.Controls.Remove(DefaultSoundPnl1);
+                PanelContainer5.Controls.Remove(DefaultSoundPnl5);
+
+                PanelContainer2.Controls.Add(DefaultSoundPnl1);
+                PanelContainer3.Controls.Add(DefaultSoundPnl2);
+                PanelContainer4.Controls.Add(DefaultSoundPnl3);
+                PanelContainer5.Controls.Add(DefaultSoundPnl4);
+
+                dock();
+            }
+
+            else if (DefaultSoundPnl1.Parent == PanelContainer2)
+            {
+                PanelContainer2.Controls.Remove(DefaultSoundPnl1);
+                PanelContainer5.Controls.Remove(DefaultSoundPnl4);
+
+                PanelContainer3.Controls.Add(DefaultSoundPnl1);
+                PanelContainer4.Controls.Add(DefaultSoundPnl2);
+                PanelContainer5.Controls.Add(DefaultSoundPnl3);
+
+                dock();
+            }
+
 
         }
 
@@ -75,9 +185,6 @@ namespace SoundPanelProto
             PanelContainer5.Controls.Clear();
 
             PanelContainer3.Controls.Add(AddSoundPnl);
-            PanelContainer2.Controls.Add(DefaultSoundPnl2);
-            PanelContainer1.Controls.Add(DefaultSoundPnl1);
-
 
             connection = new SqlConnection(connectionString);
 
@@ -92,52 +199,42 @@ namespace SoundPanelProto
 
             if (FilenameLbl1.Text != "null")
             {
-                PanelContainer1.Controls.Add(LoadablePnl1);
+                PanelContainer2.Controls.Remove(DefaultSoundPnl5);
+                PanelContainer1.Controls.Add(DefaultSoundPnl2);
+
+                PanelContainer2.Controls.Add(LoadablePnl1);
                 LoadablePnl1.Visible = true;
+
             }
+
+            else if (FilenameLbl2.Text != "null")
+            {
+                PanelContainer2.Controls.Remove(DefaultSoundPnl5);
+                PanelContainer1.Controls.Add(DefaultSoundPnl2);
+
+                PanelContainer2.Controls.Add(LoadablePnl2);
+                LoadablePnl2.Visible = true;
+
+
+                dock();
+            }
+
             else
             {
+                PanelContainer2.Controls.Add(DefaultSoundPnl5);
                 LoadablePnl1.Visible = false;
             }
 
             if (FilenameLbl2.Text != "null")
             {
-                PanelContainer2.Controls.Add(LoadablePnl2);
-                LoadablePnl2.Visible = true;
-            }
-            else
-            {
-                LoadablePnl2.Visible = false;
-            }
+                PanelContainer1.Controls.Remove(DefaultSoundPnl4);
 
-            if (FilenameLbl3.Text != "null")
-            {
-                PanelContainer3.Controls.Add(LoadablePnl3);
-                LoadablePnl3.Visible = true;
+                PanelContainer1.Controls.Add(LoadablePnl1);
+                LoadablePnl1.Visible = true;
             }
             else
             {
-                LoadablePnl3.Visible = false;
-            }
 
-            if (FilenameLbl4.Text != "null")
-            {
-                PanelContainer4.Controls.Add(LoadablePnl4);
-                LoadablePnl4.Visible = true;
-            }
-            else
-            {
-                LoadablePnl4.Visible = false;
-            }
-
-            if (FilenameLbl5.Text != "null")
-            {
-                PanelContainer5.Controls.Add(LoadablePnl5);
-                LoadablePnl5.Visible = true;
-            }
-            else
-            {
-                LoadablePnl5.Visible = false;
             }
 
             //kung simula FilenameLbl1 hangang FilenameLbl5 ay not equal sa null ay ireremove nya ang AddSoundPnl sa lahat ng panelcontainer
@@ -167,9 +264,8 @@ namespace SoundPanelProto
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                selectedFilePath = openFileDialog.FileName; // I-assign ang selected file path sa variable na ito.
+                selectedFilePath = openFileDialog.FileName;
 
-                // I-display ang pangalang ng file sa Label1.
                 label1.Text = Path.GetFileName(selectedFilePath);
 
                 panel1.Visible = true;
@@ -230,7 +326,7 @@ namespace SoundPanelProto
                 cmd.Parameters.AddWithValue("@FileName", Path.GetFileName(selectedFilePath));
                 cmd.Parameters.AddWithValue("@SoundTitle", soundTitle);
                 cmd.Parameters.AddWithValue("@SoundData", fileData);
-                cmd.Parameters.AddWithValue("@ImageData", imageBytes); // Add parameter for ImageData
+                cmd.Parameters.AddWithValue("@ImageData", imageBytes);
                 cmd.ExecuteNonQuery();
 
                 connection.Close();
@@ -294,7 +390,6 @@ namespace SoundPanelProto
                 {
                     try
                     {
-                        // I-load ang napiling larawan mula sa OpenFileDialog sa soundpicbox
                         soundpicbox.Image = new Bitmap(openFileDialog.FileName);
                         soundpicbox.SizeMode = PictureBoxSizeMode.StretchImage;
                     }
