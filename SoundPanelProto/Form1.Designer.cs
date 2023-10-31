@@ -547,7 +547,7 @@
             LoadablePnl3.Controls.Add(pictureBox6);
             LoadablePnl3.Controls.Add(button2);
             LoadablePnl3.Controls.Add(FilenameLbl3);
-            LoadablePnl3.Location = new Point(343, 65);
+            LoadablePnl3.Location = new Point(343, 51);
             LoadablePnl3.Name = "LoadablePnl3";
             LoadablePnl3.Size = new Size(139, 218);
             LoadablePnl3.TabIndex = 3;
@@ -590,7 +590,7 @@
             LoadablePnl4.Controls.Add(pictureBox4);
             LoadablePnl4.Controls.Add(button3);
             LoadablePnl4.Controls.Add(FilenameLbl4);
-            LoadablePnl4.Location = new Point(520, 86);
+            LoadablePnl4.Location = new Point(520, 83);
             LoadablePnl4.Name = "LoadablePnl4";
             LoadablePnl4.Size = new Size(115, 180);
             LoadablePnl4.TabIndex = 6;
@@ -633,7 +633,7 @@
             LoadablePnl5.Controls.Add(pictureBox3);
             LoadablePnl5.Controls.Add(button4);
             LoadablePnl5.Controls.Add(FilenameLbl5);
-            LoadablePnl5.Location = new Point(665, 99);
+            LoadablePnl5.Location = new Point(665, 105);
             LoadablePnl5.Name = "LoadablePnl5";
             LoadablePnl5.Size = new Size(101, 151);
             LoadablePnl5.TabIndex = 7;
@@ -676,7 +676,7 @@
             LoadablePnl1.Controls.Add(pictureBox2);
             LoadablePnl1.Controls.Add(button5);
             LoadablePnl1.Controls.Add(FilenameLbl1);
-            LoadablePnl1.Location = new Point(52, 99);
+            LoadablePnl1.Location = new Point(52, 107);
             LoadablePnl1.Name = "LoadablePnl1";
             LoadablePnl1.Size = new Size(101, 151);
             LoadablePnl1.TabIndex = 8;
@@ -719,7 +719,7 @@
             LoadablePnl2.Controls.Add(pictureBox5);
             LoadablePnl2.Controls.Add(button6);
             LoadablePnl2.Controls.Add(FilenameLbl2);
-            LoadablePnl2.Location = new Point(191, 86);
+            LoadablePnl2.Location = new Point(185, 83);
             LoadablePnl2.Name = "LoadablePnl2";
             LoadablePnl2.Size = new Size(115, 180);
             LoadablePnl2.TabIndex = 9;
@@ -765,9 +765,9 @@
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(InsertBtn);
             panel1.Controls.Add(soundpicbox);
-            panel1.Location = new Point(315, 12);
+            panel1.Location = new Point(309, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(197, 303);
+            panel1.Size = new Size(200, 303);
             panel1.TabIndex = 10;
             panel1.Visible = false;
             // 
@@ -777,7 +777,7 @@
             pictureBox8.BackColor = Color.Transparent;
             pictureBox8.BackgroundImage = Properties.Resources.pencil_edit;
             pictureBox8.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox8.Location = new Point(111, 76);
+            pictureBox8.Location = new Point(113, 76);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(22, 23);
             pictureBox8.TabIndex = 15;
@@ -796,7 +796,7 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Location = new Point(38, 199);
+            label1.Location = new Point(40, 199);
             label1.Name = "label1";
             label1.Size = new Size(106, 15);
             label1.TabIndex = 13;
@@ -805,7 +805,7 @@
             // textBox1
             // 
             textBox1.Anchor = AnchorStyles.None;
-            textBox1.Location = new Point(40, 215);
+            textBox1.Location = new Point(42, 215);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(100, 23);
             textBox1.TabIndex = 12;
@@ -813,7 +813,7 @@
             // InsertBtn
             // 
             InsertBtn.Anchor = AnchorStyles.None;
-            InsertBtn.Location = new Point(56, 266);
+            InsertBtn.Location = new Point(58, 266);
             InsertBtn.Name = "InsertBtn";
             InsertBtn.Size = new Size(75, 23);
             InsertBtn.TabIndex = 0;
@@ -826,7 +826,7 @@
             soundpicbox.Anchor = AnchorStyles.None;
             soundpicbox.BackgroundImage = Properties.Resources._default;
             soundpicbox.BackgroundImageLayout = ImageLayout.Stretch;
-            soundpicbox.Location = new Point(48, 22);
+            soundpicbox.Location = new Point(58, 22);
             soundpicbox.Name = "soundpicbox";
             soundpicbox.Size = new Size(85, 77);
             soundpicbox.TabIndex = 16;
@@ -848,10 +848,10 @@
             Controls.Add(PanelContainer1);
             Controls.Add(AddSoundPnl);
             Controls.Add(LoadablePnl1);
-            Controls.Add(panel1);
-            Controls.Add(LoadablePnl2);
             Controls.Add(LoadablePnl5);
             Controls.Add(LoadablePnl3);
+            Controls.Add(panel1);
+            Controls.Add(LoadablePnl2);
             Controls.Add(LoadablePnl4);
             Name = "Form1";
             Text = "Form1";
