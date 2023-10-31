@@ -32,22 +32,34 @@ namespace SoundPanelProto
 
         private void Prev_btn_Click(object sender, EventArgs e)
         {
+            //1st Possition
 
-            if (LoadablePnl1.Parent == PanelContainer3)
+            if (DefaultSoundPnl1.Parent == PanelContainer3)
+            {
+                PanelContainer2.Controls.Add(DefaultSoundPnl1);
+                PanelContainer3.Controls.Add(DefaultSoundPnl2);
+                PanelContainer4.Controls.Add(DefaultSoundPnl3);
+                PanelContainer5.Controls.Add(DefaultSoundPnl4);
+            }
+
+            else if (LoadablePnl1.Parent == PanelContainer3)
             {
                 PanelContainer2.Controls.Add(LoadablePnl1);
                 PanelContainer3.Controls.Add(LoadablePnl2);
                 PanelContainer4.Controls.Add(LoadablePnl3);
                 PanelContainer5.Controls.Add(LoadablePnl4);
+            }
 
-                if (DefaultSoundPnl1.Parent == PanelContainer3)
-                {
-                    PanelContainer2.Controls.Add(DefaultSoundPnl1);
-                    PanelContainer3.Controls.Add(DefaultSoundPnl2);
-                    PanelContainer4.Controls.Add(DefaultSoundPnl3);
-                    PanelContainer5.Controls.Add(DefaultSoundPnl4);
-                }
 
+            //2nd Possition
+
+            else if (DefaultSoundPnl1.Parent == PanelContainer2)
+            {
+                PanelContainer1.Controls.Add(DefaultSoundPnl1);
+                PanelContainer2.Controls.Add(DefaultSoundPnl2);
+                PanelContainer3.Controls.Add(DefaultSoundPnl3);
+                PanelContainer4.Controls.Add(DefaultSoundPnl4);
+                PanelContainer5.Controls.Add(DefaultSoundPnl5);
             }
 
             else if (LoadablePnl1.Parent == PanelContainer2)
@@ -57,179 +69,208 @@ namespace SoundPanelProto
                 PanelContainer3.Controls.Add(LoadablePnl3);
                 PanelContainer4.Controls.Add(LoadablePnl4);
                 PanelContainer5.Controls.Add(LoadablePnl5);
-
-                if (DefaultSoundPnl1.Parent == PanelContainer2)
-                {
-                    PanelContainer1.Controls.Add(DefaultSoundPnl1);
-                    PanelContainer2.Controls.Add(DefaultSoundPnl2);
-                    PanelContainer3.Controls.Add(DefaultSoundPnl3);
-                    PanelContainer4.Controls.Add(DefaultSoundPnl4);
-                    PanelContainer5.Controls.Add(DefaultSoundPnl5);
-                }
-
             }
+
+            //3rd Possition
+
+            else if (DefaultSoundPnl1.Parent == PanelContainer1)
+            {
+                PanelContainer1.Controls.Remove(DefaultSoundPnl1);
+
+                PanelContainer1.Controls.Add(DefaultSoundPnl2);
+                PanelContainer2.Controls.Add(DefaultSoundPnl3);
+                PanelContainer3.Controls.Add(DefaultSoundPnl4);
+                PanelContainer4.Controls.Add(DefaultSoundPnl5);
+                PanelContainer5.Controls.Add(AddSoundPnl);
+            }
+
             else if (LoadablePnl1.Parent == PanelContainer1)
             {
-                PanelContainer5.Controls.Clear();
-                PanelContainer1.Controls.Clear();
-                PanelContainer5.Controls.Add(AddSoundPnl);
+                PanelContainer1.Controls.Remove(LoadablePnl1);
 
                 PanelContainer1.Controls.Add(LoadablePnl2);
                 PanelContainer2.Controls.Add(LoadablePnl3);
                 PanelContainer3.Controls.Add(LoadablePnl4);
                 PanelContainer4.Controls.Add(LoadablePnl5);
-
-
-                if (DefaultSoundPnl5.Parent == PanelContainer5)
-                {
-                    PanelContainer1.Controls.Remove(DefaultSoundPnl1);
-
-                    PanelContainer1.Controls.Add(DefaultSoundPnl2);
-                    PanelContainer2.Controls.Add(DefaultSoundPnl3);
-                    PanelContainer3.Controls.Add(DefaultSoundPnl4);
-                    PanelContainer4.Controls.Add(DefaultSoundPnl5);
-                    PanelContainer5.Controls.Add(AddSoundPnl);
-                }
+                PanelContainer5.Controls.Add(AddSoundPnl);
             }
 
-            else if (AddSoundPnl.Parent == PanelContainer5)
+            //4th Possition
+
+            else if (DefaultSoundPnl5.Parent == PanelContainer4)
             {
-                PanelContainer1.Controls.Clear();
+
+                PanelContainer1.Controls.Remove(DefaultSoundPnl2);
+
+                PanelContainer1.Controls.Add(DefaultSoundPnl3);
+                PanelContainer2.Controls.Add(DefaultSoundPnl4);
+                PanelContainer3.Controls.Add(DefaultSoundPnl5);
+                PanelContainer4.Controls.Add(AddSoundPnl);
+
+            }
+
+            else if (LoadablePnl5.Parent == PanelContainer4)
+            {
+                PanelContainer1.Controls.Remove(LoadablePnl2);
 
                 PanelContainer1.Controls.Add(LoadablePnl3);
                 PanelContainer2.Controls.Add(LoadablePnl4);
                 PanelContainer3.Controls.Add(LoadablePnl5);
                 PanelContainer4.Controls.Add(AddSoundPnl);
+            }
 
-                if (DefaultSoundPnl5.Parent == PanelContainer4)
-                {
-                    PanelContainer1.Controls.Remove(DefaultSoundPnl2);
+            //last possition
 
-                    PanelContainer1.Controls.Add(DefaultSoundPnl3);
-                    PanelContainer2.Controls.Add(DefaultSoundPnl4);
-                    PanelContainer3.Controls.Add(DefaultSoundPnl5);
-                    PanelContainer4.Controls.Add(AddSoundPnl);
-                }
+            else if (DefaultSoundPnl5.Parent == PanelContainer3)
+            {
+
+                PanelContainer1.Controls.Remove(DefaultSoundPnl3);
+
+                PanelContainer1.Controls.Add(DefaultSoundPnl4);
+                PanelContainer2.Controls.Add(DefaultSoundPnl5);
+                PanelContainer3.Controls.Add(AddSoundPnl);
 
             }
 
-            else if (AddSoundPnl.Parent == PanelContainer4)
+            else if (LoadablePnl5.Parent == PanelContainer3)
             {
-                PanelContainer1.Controls.Clear();
+                PanelContainer1.Controls.Remove(LoadablePnl3);
 
                 PanelContainer1.Controls.Add(LoadablePnl4);
                 PanelContainer2.Controls.Add(LoadablePnl5);
                 PanelContainer3.Controls.Add(AddSoundPnl);
-
-                if (DefaultSoundPnl5.Parent == PanelContainer3)
-                {
-                    PanelContainer1.Controls.Remove(DefaultSoundPnl3);
-
-                    PanelContainer1.Controls.Add(DefaultSoundPnl4);
-                    PanelContainer2.Controls.Add(DefaultSoundPnl5);
-                    PanelContainer3.Controls.Add(AddSoundPnl);
-                }
             }
 
         }
         private void Next_Btn_Click(object sender, EventArgs e)
         {
+            //1st possition
 
-            //default soundpanels 1st possition
+            //panelcontainer2 kase sa panelcontainer3 ang PanelContainer3
+            if (LoadablePnl5.Parent == PanelContainer2) {
+                PanelContainer4.Controls.Add(AddSoundPnl);
+                //ito ang ieecute na code kung ang LoadablePnl3 ay nasa PanelContainer2
 
-            if (AddSoundPnl.Parent == PanelContainer3)
-            {
-                PanelContainer2.Controls.Remove(AddSoundPnl);
+                PanelContainer3.Controls.Add(LoadablePnl5);
+                PanelContainer2.Controls.Add(LoadablePnl4);
+                PanelContainer1.Controls.Add(LoadablePnl3);
+                LoadablePnl3.Visible = true;
+            }
 
-                if (LoadablePnl5.Parent == PanelContainer2)
-                {
-                    PanelContainer4.Controls.Add(AddSoundPnl);
-                    PanelContainer3.Controls.Add(LoadablePnl5);
-                    PanelContainer2.Controls.Add(LoadablePnl4);
+            else if (DefaultSoundPnl5.Parent == PanelContainer2) {
 
-                    LoadablePnl3.Visible = true;
-                    PanelContainer1.Controls.Add(LoadablePnl3);
+                PanelContainer4.Controls.Add(AddSoundPnl);
+                //ito ang ieecute na code kung ang LoadablePnl3 ay nasa PanelContainer2
 
-                }
-
-                else
-                {
-                    PanelContainer1.Controls.Add(DefaultSoundPnl3);
-                    PanelContainer2.Controls.Add(DefaultSoundPnl4);
-                    PanelContainer3.Controls.Add(DefaultSoundPnl5);
-                    PanelContainer4.Controls.Add(AddSoundPnl);
-                    dock();
-                }
+                PanelContainer3.Controls.Add(DefaultSoundPnl5);
+                PanelContainer2.Controls.Add(DefaultSoundPnl4);
+                PanelContainer1.Controls.Add(DefaultSoundPnl3);
 
             }
 
-            //default soundpanels 2nd possition
+            //2nd possition
 
-            else if (AddSoundPnl.Parent == PanelContainer4)
+            else if(LoadablePnl5.Parent == PanelContainer3)
             {
-                PanelContainer4.Controls.Remove(AddSoundPnl);
+                PanelContainer5.Controls.Add(AddSoundPnl);
+                //ito ang ieecute na code kung ang LoadablePnl3 ay nasa PanelContainer2
 
-                if (LoadablePnl5.Parent == PanelContainer3)
-                {
-                    //PanelContainer2.Controls.Remove(LoadablePnl5);
-                    //PanelContainer1.Controls.Remove(LoadablePnl4);
+                PanelContainer4.Controls.Add(LoadablePnl5);
+                PanelContainer3.Controls.Add(LoadablePnl4);
+                PanelContainer2.Controls.Add(LoadablePnl3);
+                PanelContainer1.Controls.Add(LoadablePnl2);
+                LoadablePnl2.Visible = true;
+            }
 
-                    PanelContainer5.Controls.Add(AddSoundPnl);
-                    PanelContainer4.Controls.Add(LoadablePnl5);
-                    PanelContainer3.Controls.Add(LoadablePnl4);
-                    PanelContainer2.Controls.Add(LoadablePnl3);
-                    LoadablePnl2.Visible = true;
-                    PanelContainer1.Controls.Add(LoadablePnl2);
-                }
+            else if (DefaultSoundPnl5.Parent == PanelContainer3)
+            {
 
-                else
-                {
-                    PanelContainer1.Controls.Add(DefaultSoundPnl2);
-                    PanelContainer2.Controls.Add(DefaultSoundPnl3);
-                    PanelContainer3.Controls.Add(DefaultSoundPnl4);
-                    PanelContainer4.Controls.Add(DefaultSoundPnl5);
-                    PanelContainer5.Controls.Add(AddSoundPnl);
-                    dock();
-                }
+                PanelContainer5.Controls.Add(AddSoundPnl);
+                //ito ang ieecute na code kung ang LoadablePnl3 ay nasa PanelContainer2
+
+                PanelContainer4.Controls.Add(DefaultSoundPnl5);
+                PanelContainer3.Controls.Add(DefaultSoundPnl4);
+                PanelContainer2.Controls.Add(DefaultSoundPnl3);
+                PanelContainer1.Controls.Add(DefaultSoundPnl2);
 
             }
 
-            //default soundpanels 3rd possition
+            //3rd possition
 
-            else if (AddSoundPnl.Parent == PanelContainer5)
+            else if(LoadablePnl5.Parent == PanelContainer4)
             {
                 PanelContainer5.Controls.Remove(AddSoundPnl);
+                //ito ang ieecute na code kung ang LoadablePnl3 ay nasa PanelContainer2
 
                 PanelContainer5.Controls.Add(LoadablePnl5);
                 PanelContainer4.Controls.Add(LoadablePnl4);
                 PanelContainer3.Controls.Add(LoadablePnl3);
                 PanelContainer2.Controls.Add(LoadablePnl2);
-                LoadablePnl1.Visible = true;
                 PanelContainer1.Controls.Add(LoadablePnl1);
+                LoadablePnl1.Visible = true;
             }
 
-            //default soundpanels 4th possition
+            else if (DefaultSoundPnl5.Parent == PanelContainer4)
+            {
 
-            else if (LoadablePnl5.Parent == PanelContainer5)
+                PanelContainer5.Controls.Remove(AddSoundPnl);
+                //ito ang ieecute na code kung ang LoadablePnl3 ay nasa PanelContainer2
+
+                PanelContainer5.Controls.Add(DefaultSoundPnl5);
+                PanelContainer4.Controls.Add(DefaultSoundPnl4);
+                PanelContainer3.Controls.Add(DefaultSoundPnl3);
+                PanelContainer2.Controls.Add(DefaultSoundPnl2);
+                PanelContainer1.Controls.Add(DefaultSoundPnl1);
+
+            }
+
+            //4th Possition
+
+            else if (LoadablePnl1.Parent == PanelContainer1)
             {
                 PanelContainer5.Controls.Remove(LoadablePnl5);
+                //ito ang ieecute na code kung ang LoadablePnl3 ay nasa PanelContainer2
 
                 PanelContainer5.Controls.Add(LoadablePnl4);
                 PanelContainer4.Controls.Add(LoadablePnl3);
                 PanelContainer3.Controls.Add(LoadablePnl2);
                 PanelContainer2.Controls.Add(LoadablePnl1);
-                PanelContainer1.Controls.Clear();
             }
 
-            //default soundpanel 5th possition
+            else if (DefaultSoundPnl1.Parent == PanelContainer1)
+            {
 
-            else if (LoadablePnl4.Parent == PanelContainer5)
+                PanelContainer5.Controls.Remove(DefaultSoundPnl5);
+                //ito ang ieecute na code kung ang LoadablePnl3 ay nasa PanelContainer2
+
+                PanelContainer5.Controls.Add(DefaultSoundPnl4);
+                PanelContainer4.Controls.Add(DefaultSoundPnl3);
+                PanelContainer3.Controls.Add(DefaultSoundPnl2);
+                PanelContainer2.Controls.Add(DefaultSoundPnl1);
+
+            }
+
+            //last possiiton
+
+            else if (LoadablePnl1.Parent == PanelContainer2)
             {
                 PanelContainer5.Controls.Remove(LoadablePnl4);
+                //ito ang ieecute na code kung ang LoadablePnl3 ay nasa PanelContainer2
 
                 PanelContainer5.Controls.Add(LoadablePnl3);
                 PanelContainer4.Controls.Add(LoadablePnl2);
                 PanelContainer3.Controls.Add(LoadablePnl1);
+            }
+
+            else if (DefaultSoundPnl1.Parent == PanelContainer2)
+            {
+
+                PanelContainer5.Controls.Remove(DefaultSoundPnl4);
+                //ito ang ieecute na code kung ang LoadablePnl3 ay nasa PanelContainer2
+
+                PanelContainer5.Controls.Add(DefaultSoundPnl3);
+                PanelContainer4.Controls.Add(DefaultSoundPnl2);
+                PanelContainer3.Controls.Add(DefaultSoundPnl1);
 
             }
 
@@ -254,8 +295,18 @@ namespace SoundPanelProto
 
             dock();
         }
+
+        private void filenamee()//temporary
+        {
+            FilenameLbl1.Text = "null1";
+            FilenameLbl2.Text = "null2";
+            FilenameLbl3.Text = "null3";
+            FilenameLbl4.Text = "null4";
+            FilenameLbl5.Text = "null5";
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
+            ///filenamee();
 
             container();
 
@@ -294,6 +345,7 @@ namespace SoundPanelProto
                 }
                 else
                 {
+                    LoadablePnl3.Visible = false;
                     PanelContainer1.Controls.Remove(LoadablePnl4);
                     PanelContainer1.Controls.Add(DefaultSoundPnl4);
                 }

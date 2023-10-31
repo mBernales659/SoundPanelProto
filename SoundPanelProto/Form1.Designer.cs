@@ -580,9 +580,9 @@
             FilenameLbl3.AutoSize = true;
             FilenameLbl3.Location = new Point(46, 142);
             FilenameLbl3.Name = "FilenameLbl3";
-            FilenameLbl3.Size = new Size(33, 15);
+            FilenameLbl3.Size = new Size(27, 15);
             FilenameLbl3.TabIndex = 5;
-            FilenameLbl3.Text = "null3";
+            FilenameLbl3.Text = "null";
             // 
             // LoadablePnl4
             // 
@@ -623,9 +623,9 @@
             FilenameLbl4.AutoSize = true;
             FilenameLbl4.Location = new Point(39, 121);
             FilenameLbl4.Name = "FilenameLbl4";
-            FilenameLbl4.Size = new Size(33, 15);
+            FilenameLbl4.Size = new Size(27, 15);
             FilenameLbl4.TabIndex = 5;
-            FilenameLbl4.Text = "null4";
+            FilenameLbl4.Text = "null";
             // 
             // LoadablePnl5
             // 
@@ -666,9 +666,9 @@
             FilenameLbl5.AutoSize = true;
             FilenameLbl5.Location = new Point(37, 116);
             FilenameLbl5.Name = "FilenameLbl5";
-            FilenameLbl5.Size = new Size(33, 15);
+            FilenameLbl5.Size = new Size(27, 15);
             FilenameLbl5.TabIndex = 5;
-            FilenameLbl5.Text = "null5";
+            FilenameLbl5.Text = "null";
             // 
             // LoadablePnl1
             // 
@@ -752,9 +752,9 @@
             FilenameLbl2.AutoSize = true;
             FilenameLbl2.Location = new Point(41, 123);
             FilenameLbl2.Name = "FilenameLbl2";
-            FilenameLbl2.Size = new Size(33, 15);
+            FilenameLbl2.Size = new Size(27, 15);
             FilenameLbl2.TabIndex = 5;
-            FilenameLbl2.Text = "null2";
+            FilenameLbl2.Text = "null";
             // 
             // panel1
             // 
@@ -850,9 +850,9 @@
             Controls.Add(LoadablePnl1);
             Controls.Add(LoadablePnl5);
             Controls.Add(LoadablePnl3);
-            Controls.Add(panel1);
             Controls.Add(LoadablePnl2);
             Controls.Add(LoadablePnl4);
+            Controls.Add(panel1);
             Name = "Form1";
             Text = "Form1";
             WindowState = FormWindowState.Maximized;
