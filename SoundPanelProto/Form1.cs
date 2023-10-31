@@ -25,6 +25,9 @@ namespace SoundPanelProto
 
             LoadablePnl1.Dock = DockStyle.Fill;
             LoadablePnl2.Dock = DockStyle.Fill;
+            LoadablePnl3.Dock = DockStyle.Fill;
+            LoadablePnl4.Dock = DockStyle.Fill;
+            LoadablePnl5.Dock = DockStyle.Fill;
         }
 
         private void Prev_btn_Click(object sender, EventArgs e)
@@ -79,53 +82,67 @@ namespace SoundPanelProto
         }
         private void Next_Btn_Click(object sender, EventArgs e)
         {
-            if (LoadablePnl1.Parent == PanelContainer1)
-            {
-                PanelContainer1.Controls.Remove(LoadablePnl1);
-                PanelContainer2.Controls.Add(LoadablePnl1);
-
-                dock();
-            }
 
             //default soundpanels 1st possition
 
-            else if (AddSoundPnl.Parent == PanelContainer3)
+            if (AddSoundPnl.Parent == PanelContainer3)
             {
-                if (LoadablePnl1.Parent == PanelContainer2)
+                PanelContainer2.Controls.Remove(AddSoundPnl);
+
+                if (LoadablePnl5.Parent == PanelContainer2)
                 {
+                    //PanelContainer2.Controls.Remove(LoadablePnl5);
+                    //PanelContainer1.Controls.Remove(LoadablePnl4);
+
                     PanelContainer4.Controls.Add(AddSoundPnl);
-                    PanelContainer3.Controls.Add(LoadablePnl1);
-                    PanelContainer2.Controls.Add(DefaultSoundPnl5);
-                    PanelContainer1.Controls.Add(DefaultSoundPnl4);
-                    dock();
+                    PanelContainer3.Controls.Add(LoadablePnl5);
+                    PanelContainer2.Controls.Add(LoadablePnl4);
+
+                    LoadablePnl3.Visible = true;
+                    PanelContainer1.Controls.Add(LoadablePnl3);
+
                 }
 
                 else
                 {
-
-                    PanelContainer3.Controls.Remove(AddSoundPnl);
-
                     PanelContainer1.Controls.Add(DefaultSoundPnl3);
                     PanelContainer2.Controls.Add(DefaultSoundPnl4);
                     PanelContainer3.Controls.Add(DefaultSoundPnl5);
                     PanelContainer4.Controls.Add(AddSoundPnl);
                     dock();
                 }
+
             }
 
             //default soundpanels 2nd possition
 
             else if (AddSoundPnl.Parent == PanelContainer4)
             {
-                PanelContainer3.Controls.Remove(AddSoundPnl);
+                PanelContainer4.Controls.Remove(AddSoundPnl);
 
-                PanelContainer1.Controls.Add(DefaultSoundPnl2);
-                PanelContainer2.Controls.Add(DefaultSoundPnl3);
-                PanelContainer3.Controls.Add(DefaultSoundPnl4);
-                PanelContainer4.Controls.Add(DefaultSoundPnl5);
-                PanelContainer5.Controls.Add(AddSoundPnl);
+                if (LoadablePnl5.Parent == PanelContainer3)
+                {
+                    //PanelContainer2.Controls.Remove(LoadablePnl5);
+                    //PanelContainer1.Controls.Remove(LoadablePnl4);
 
-                dock();
+                    PanelContainer5.Controls.Add(AddSoundPnl);
+                    PanelContainer4.Controls.Add(LoadablePnl5);
+                    PanelContainer3.Controls.Add(LoadablePnl4);
+                    PanelContainer2.Controls.Add(LoadablePnl3);
+                    LoadablePnl2.Visible = true;
+                    PanelContainer1.Controls.Add(LoadablePnl2);
+                }
+
+                else
+                {
+                    PanelContainer1.Controls.Add(DefaultSoundPnl2);
+                    PanelContainer2.Controls.Add(DefaultSoundPnl3);
+                    PanelContainer3.Controls.Add(DefaultSoundPnl4);
+                    PanelContainer4.Controls.Add(DefaultSoundPnl5);
+                    PanelContainer5.Controls.Add(AddSoundPnl);
+                    dock();
+                }
+
             }
 
             //default soundpanels 3rd possition
@@ -134,41 +151,15 @@ namespace SoundPanelProto
             {
                 PanelContainer5.Controls.Remove(AddSoundPnl);
 
-                PanelContainer1.Controls.Add(DefaultSoundPnl1);
-                PanelContainer2.Controls.Add(DefaultSoundPnl2);
-                PanelContainer3.Controls.Add(DefaultSoundPnl3);
-                PanelContainer4.Controls.Add(DefaultSoundPnl4);
-                PanelContainer5.Controls.Add(DefaultSoundPnl5);
-
-                dock();
+                PanelContainer5.Controls.Add(LoadablePnl5);
+                PanelContainer4.Controls.Add(LoadablePnl4);
+                PanelContainer3.Controls.Add(LoadablePnl3);
+                PanelContainer2.Controls.Add(LoadablePnl2);
+                LoadablePnl1.Visible = true;
+                PanelContainer1.Controls.Add(LoadablePnl1);
             }
 
-            else if (DefaultSoundPnl1.Parent == PanelContainer1)
-            {
-                PanelContainer1.Controls.Remove(DefaultSoundPnl1);
-                PanelContainer5.Controls.Remove(DefaultSoundPnl5);
-
-                PanelContainer2.Controls.Add(DefaultSoundPnl1);
-                PanelContainer3.Controls.Add(DefaultSoundPnl2);
-                PanelContainer4.Controls.Add(DefaultSoundPnl3);
-                PanelContainer5.Controls.Add(DefaultSoundPnl4);
-
-                dock();
-            }
-
-            else if (DefaultSoundPnl1.Parent == PanelContainer2)
-            {
-                PanelContainer2.Controls.Remove(DefaultSoundPnl1);
-                PanelContainer5.Controls.Remove(DefaultSoundPnl4);
-
-                PanelContainer3.Controls.Add(DefaultSoundPnl1);
-                PanelContainer4.Controls.Add(DefaultSoundPnl2);
-                PanelContainer5.Controls.Add(DefaultSoundPnl3);
-
-                dock();
-            }
-
-
+               
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -176,7 +167,7 @@ namespace SoundPanelProto
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void container()
         {
             PanelContainer1.Controls.Clear();
             PanelContainer2.Controls.Clear();
@@ -184,9 +175,59 @@ namespace SoundPanelProto
             PanelContainer4.Controls.Clear();
             PanelContainer5.Controls.Clear();
 
+            //PanelContainer1.Controls.Add(DefaultSoundPnl4);
+            //PanelContainer2.Controls.Add(DefaultSoundPnl5);
             PanelContainer3.Controls.Add(AddSoundPnl);
 
-            connection = new SqlConnection(connectionString);
+            dock();
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            container();
+
+            if (FilenameLbl5.Text != "null")
+            {
+                PanelContainer2.Controls.Remove(DefaultSoundPnl1);
+
+                PanelContainer2.Controls.Add(LoadablePnl5);
+                LoadablePnl5.Visible = true;
+                dock();
+
+            }
+
+            else
+            {
+                PanelContainer2.Controls.Remove(LoadablePnl5);
+                PanelContainer2.Controls.Add(DefaultSoundPnl5);
+            }
+
+            if (FilenameLbl4.Text != "null")
+            {
+                PanelContainer1.Controls.Remove(DefaultSoundPnl4);
+
+                PanelContainer1.Controls.Add(LoadablePnl4);
+                LoadablePnl4.Visible = true;
+                dock();
+            }
+
+            else
+            {
+                if (FilenameLbl3.Text != "null" && PanelContainer1 != LoadablePnl5)
+                {
+                    PanelContainer1.Controls.Add(LoadablePnl3);
+                    LoadablePnl3.Visible = true; 
+                    
+                }
+                else
+                {
+                    PanelContainer1.Controls.Remove(LoadablePnl4);
+                    PanelContainer1.Controls.Add(DefaultSoundPnl4);
+                }
+
+            }
+                connection = new SqlConnection(connectionString);
+
 
             media_retriever mr = new media_retriever();
 
@@ -197,60 +238,7 @@ namespace SoundPanelProto
 
             //kung ang filename label sa loadable panel ay not equal sa null ay iaadd niya ito sa panelconatiner
 
-            if (FilenameLbl1.Text != "null")
-            {
-                PanelContainer2.Controls.Remove(DefaultSoundPnl5);
-                PanelContainer1.Controls.Add(DefaultSoundPnl2);
 
-                PanelContainer2.Controls.Add(LoadablePnl1);
-                LoadablePnl1.Visible = true;
-
-            }
-
-            else if (FilenameLbl2.Text != "null")
-            {
-                PanelContainer2.Controls.Remove(DefaultSoundPnl5);
-                PanelContainer1.Controls.Add(DefaultSoundPnl2);
-
-                PanelContainer2.Controls.Add(LoadablePnl2);
-                LoadablePnl2.Visible = true;
-
-
-                dock();
-            }
-
-            else
-            {
-                PanelContainer2.Controls.Add(DefaultSoundPnl5);
-                LoadablePnl1.Visible = false;
-            }
-
-            if (FilenameLbl2.Text != "null")
-            {
-                PanelContainer1.Controls.Remove(DefaultSoundPnl4);
-
-                PanelContainer1.Controls.Add(LoadablePnl1);
-                LoadablePnl1.Visible = true;
-            }
-            else
-            {
-
-            }
-
-            //kung simula FilenameLbl1 hangang FilenameLbl5 ay not equal sa null ay ireremove nya ang AddSoundPnl sa lahat ng panelcontainer
-
-            for (int i = 1; i <= 15; i++)
-            {
-                Control panelContainer = this.Controls.Find("PanelContainer" + i, true).FirstOrDefault();
-                Label filenameLabel = this.Controls.Find("FilenameLbl" + i, true).FirstOrDefault() as Label;
-
-                if (panelContainer != null && filenameLabel != null && filenameLabel.Text != "null")
-                {
-                    panelContainer.Controls.Remove(AddSoundPnl);
-                }
-            }
-
-            dock();
         }
 
 
@@ -353,13 +341,6 @@ namespace SoundPanelProto
 
         }
 
-        private void DefaultSoundBtn1_Click(object sender, EventArgs e)
-        {
-            media_retriever mr = new media_retriever();
-            int soundIDToPlay = 1;
-            mr.PlaySound(soundIDToPlay);
-        }
-
         private void train()
         {
             media_retriever mr = new media_retriever();
@@ -404,6 +385,13 @@ namespace SoundPanelProto
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             opnfiledialog();
+        }
+
+        private void DefaultSoundBtn2_Click(object sender, EventArgs e)
+        {
+            media_retriever mr = new media_retriever();
+            int soundIDToPlay = 1;
+            mr.PlaySound(soundIDToPlay);
         }
     }
 }

@@ -149,6 +149,7 @@
             // 
             // tableLayoutPanel6
             // 
+            tableLayoutPanel6.BackColor = SystemColors.ActiveCaption;
             tableLayoutPanel6.ColumnCount = 3;
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.9577045F));
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 54.08459F));
@@ -419,6 +420,7 @@
             // 
             // tableLayoutPanel5
             // 
+            tableLayoutPanel5.BackColor = SystemColors.ActiveBorder;
             tableLayoutPanel5.ColumnCount = 3;
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.4298F));
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 55.44252F));
@@ -445,6 +447,7 @@
             DefaultSoundBtn2.TabIndex = 11;
             DefaultSoundBtn2.Text = "Play";
             DefaultSoundBtn2.UseVisualStyleBackColor = true;
+            DefaultSoundBtn2.Click += DefaultSoundBtn2_Click;
             // 
             // DefaultSoundFileNameLbl2
             // 
@@ -488,6 +491,7 @@
             // 
             // tableLayoutPanel2
             // 
+            tableLayoutPanel2.BackColor = SystemColors.GrayText;
             tableLayoutPanel2.ColumnCount = 3;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.78022F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60.43956F));
@@ -499,9 +503,9 @@
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 4;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 10.8695679F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 43.47826F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 31.1284046F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 10.8949413F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 40.85603F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 32.6848259F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 15.1750975F));
             tableLayoutPanel2.Size = new Size(159, 257);
             tableLayoutPanel2.TabIndex = 0;
@@ -511,9 +515,9 @@
             DefaultSoundPicbox3.BackgroundImage = Properties.Resources._default;
             DefaultSoundPicbox3.BackgroundImageLayout = ImageLayout.Stretch;
             DefaultSoundPicbox3.Dock = DockStyle.Fill;
-            DefaultSoundPicbox3.Location = new Point(34, 30);
+            DefaultSoundPicbox3.Location = new Point(34, 31);
             DefaultSoundPicbox3.Name = "DefaultSoundPicbox3";
-            DefaultSoundPicbox3.Size = new Size(90, 105);
+            DefaultSoundPicbox3.Size = new Size(90, 99);
             DefaultSoundPicbox3.TabIndex = 15;
             DefaultSoundPicbox3.TabStop = false;
             // 
@@ -521,7 +525,7 @@
             // 
             DefaultSoundFileNameLbl3.Anchor = AnchorStyles.None;
             DefaultSoundFileNameLbl3.AutoSize = true;
-            DefaultSoundFileNameLbl3.Location = new Point(60, 170);
+            DefaultSoundFileNameLbl3.Location = new Point(60, 167);
             DefaultSoundFileNameLbl3.Name = "DefaultSoundFileNameLbl3";
             DefaultSoundFileNameLbl3.Size = new Size(38, 15);
             DefaultSoundFileNameLbl3.TabIndex = 16;
@@ -539,7 +543,7 @@
             // 
             // LoadablePnl3
             // 
-            LoadablePnl3.BackColor = SystemColors.GradientInactiveCaption;
+            LoadablePnl3.BackColor = SystemColors.Info;
             LoadablePnl3.Controls.Add(pictureBox6);
             LoadablePnl3.Controls.Add(button2);
             LoadablePnl3.Controls.Add(FilenameLbl3);
@@ -576,13 +580,13 @@
             FilenameLbl3.AutoSize = true;
             FilenameLbl3.Location = new Point(46, 142);
             FilenameLbl3.Name = "FilenameLbl3";
-            FilenameLbl3.Size = new Size(27, 15);
+            FilenameLbl3.Size = new Size(33, 15);
             FilenameLbl3.TabIndex = 5;
-            FilenameLbl3.Text = "null";
+            FilenameLbl3.Text = "null3";
             // 
             // LoadablePnl4
             // 
-            LoadablePnl4.BackColor = SystemColors.GradientInactiveCaption;
+            LoadablePnl4.BackColor = Color.YellowGreen;
             LoadablePnl4.Controls.Add(pictureBox4);
             LoadablePnl4.Controls.Add(button3);
             LoadablePnl4.Controls.Add(FilenameLbl4);
@@ -619,13 +623,13 @@
             FilenameLbl4.AutoSize = true;
             FilenameLbl4.Location = new Point(39, 121);
             FilenameLbl4.Name = "FilenameLbl4";
-            FilenameLbl4.Size = new Size(27, 15);
+            FilenameLbl4.Size = new Size(33, 15);
             FilenameLbl4.TabIndex = 5;
-            FilenameLbl4.Text = "null";
+            FilenameLbl4.Text = "null4";
             // 
             // LoadablePnl5
             // 
-            LoadablePnl5.BackColor = SystemColors.GradientInactiveCaption;
+            LoadablePnl5.BackColor = Color.LightPink;
             LoadablePnl5.Controls.Add(pictureBox3);
             LoadablePnl5.Controls.Add(button4);
             LoadablePnl5.Controls.Add(FilenameLbl5);
@@ -660,11 +664,11 @@
             // 
             FilenameLbl5.Anchor = AnchorStyles.None;
             FilenameLbl5.AutoSize = true;
-            FilenameLbl5.Location = new Point(39, 108);
+            FilenameLbl5.Location = new Point(37, 116);
             FilenameLbl5.Name = "FilenameLbl5";
-            FilenameLbl5.Size = new Size(27, 15);
+            FilenameLbl5.Size = new Size(33, 15);
             FilenameLbl5.TabIndex = 5;
-            FilenameLbl5.Text = "null";
+            FilenameLbl5.Text = "null5";
             // 
             // LoadablePnl1
             // 
@@ -711,7 +715,7 @@
             // 
             // LoadablePnl2
             // 
-            LoadablePnl2.BackColor = SystemColors.GradientInactiveCaption;
+            LoadablePnl2.BackColor = Color.RosyBrown;
             LoadablePnl2.Controls.Add(pictureBox5);
             LoadablePnl2.Controls.Add(button6);
             LoadablePnl2.Controls.Add(FilenameLbl2);
@@ -748,9 +752,9 @@
             FilenameLbl2.AutoSize = true;
             FilenameLbl2.Location = new Point(41, 123);
             FilenameLbl2.Name = "FilenameLbl2";
-            FilenameLbl2.Size = new Size(27, 15);
+            FilenameLbl2.Size = new Size(33, 15);
             FilenameLbl2.TabIndex = 5;
-            FilenameLbl2.Text = "null";
+            FilenameLbl2.Text = "null2";
             // 
             // panel1
             // 
@@ -842,13 +846,13 @@
             Controls.Add(Next_Btn);
             Controls.Add(Prev_btn);
             Controls.Add(PanelContainer1);
+            Controls.Add(AddSoundPnl);
+            Controls.Add(LoadablePnl1);
+            Controls.Add(panel1);
+            Controls.Add(LoadablePnl2);
             Controls.Add(LoadablePnl5);
             Controls.Add(LoadablePnl3);
             Controls.Add(LoadablePnl4);
-            Controls.Add(panel1);
-            Controls.Add(AddSoundPnl);
-            Controls.Add(LoadablePnl1);
-            Controls.Add(LoadablePnl2);
             Name = "Form1";
             Text = "Form1";
             WindowState = FormWindowState.Maximized;
