@@ -19,6 +19,7 @@ namespace SoundPanelProto
 
         private void dock()
         {
+            loadables();
             AddSoundPnl.Dock = DockStyle.Fill;
 
             DefaultSoundPnl2.Dock = DockStyle.Fill;
@@ -147,7 +148,8 @@ namespace SoundPanelProto
             //1st possition
 
             //panelcontainer2 kase sa panelcontainer3 ang PanelContainer3
-            if (LoadablePnl5.Parent == PanelContainer2) {
+            if (LoadablePnl5.Parent == PanelContainer2)
+            {
                 PanelContainer4.Controls.Add(AddSoundPnl);
                 //ito ang ieecute na code kung ang LoadablePnl3 ay nasa PanelContainer2
 
@@ -155,9 +157,11 @@ namespace SoundPanelProto
                 PanelContainer2.Controls.Add(LoadablePnl4);
                 PanelContainer1.Controls.Add(LoadablePnl3);
                 LoadablePnl3.Visible = true;
+                dock();
             }
 
-            else if (DefaultSoundPnl5.Parent == PanelContainer2) {
+            else if (DefaultSoundPnl5.Parent == PanelContainer2)
+            {
 
                 PanelContainer4.Controls.Add(AddSoundPnl);
                 //ito ang ieecute na code kung ang LoadablePnl3 ay nasa PanelContainer2
@@ -165,12 +169,12 @@ namespace SoundPanelProto
                 PanelContainer3.Controls.Add(DefaultSoundPnl5);
                 PanelContainer2.Controls.Add(DefaultSoundPnl4);
                 PanelContainer1.Controls.Add(DefaultSoundPnl3);
-
+                dock();
             }
 
             //2nd possition
 
-            else if(LoadablePnl5.Parent == PanelContainer3)
+            else if (LoadablePnl5.Parent == PanelContainer3)
             {
                 PanelContainer5.Controls.Add(AddSoundPnl);
                 //ito ang ieecute na code kung ang LoadablePnl3 ay nasa PanelContainer2
@@ -180,6 +184,7 @@ namespace SoundPanelProto
                 PanelContainer2.Controls.Add(LoadablePnl3);
                 PanelContainer1.Controls.Add(LoadablePnl2);
                 LoadablePnl2.Visible = true;
+                dock();
             }
 
             else if (DefaultSoundPnl5.Parent == PanelContainer3)
@@ -192,12 +197,12 @@ namespace SoundPanelProto
                 PanelContainer3.Controls.Add(DefaultSoundPnl4);
                 PanelContainer2.Controls.Add(DefaultSoundPnl3);
                 PanelContainer1.Controls.Add(DefaultSoundPnl2);
-
+                dock();
             }
 
             //3rd possition
 
-            else if(LoadablePnl5.Parent == PanelContainer4)
+            else if (LoadablePnl5.Parent == PanelContainer4)
             {
                 PanelContainer5.Controls.Remove(AddSoundPnl);
                 //ito ang ieecute na code kung ang LoadablePnl3 ay nasa PanelContainer2
@@ -208,6 +213,7 @@ namespace SoundPanelProto
                 PanelContainer2.Controls.Add(LoadablePnl2);
                 PanelContainer1.Controls.Add(LoadablePnl1);
                 LoadablePnl1.Visible = true;
+                dock();
             }
 
             else if (DefaultSoundPnl5.Parent == PanelContainer4)
@@ -221,7 +227,7 @@ namespace SoundPanelProto
                 PanelContainer3.Controls.Add(DefaultSoundPnl3);
                 PanelContainer2.Controls.Add(DefaultSoundPnl2);
                 PanelContainer1.Controls.Add(DefaultSoundPnl1);
-
+                dock();
             }
 
             //4th Possition
@@ -235,6 +241,7 @@ namespace SoundPanelProto
                 PanelContainer4.Controls.Add(LoadablePnl3);
                 PanelContainer3.Controls.Add(LoadablePnl2);
                 PanelContainer2.Controls.Add(LoadablePnl1);
+                dock();
             }
 
             else if (DefaultSoundPnl1.Parent == PanelContainer1)
@@ -247,7 +254,7 @@ namespace SoundPanelProto
                 PanelContainer4.Controls.Add(DefaultSoundPnl3);
                 PanelContainer3.Controls.Add(DefaultSoundPnl2);
                 PanelContainer2.Controls.Add(DefaultSoundPnl1);
-
+                dock();
             }
 
             //last possiiton
@@ -260,6 +267,7 @@ namespace SoundPanelProto
                 PanelContainer5.Controls.Add(LoadablePnl3);
                 PanelContainer4.Controls.Add(LoadablePnl2);
                 PanelContainer3.Controls.Add(LoadablePnl1);
+                dock();
             }
 
             else if (DefaultSoundPnl1.Parent == PanelContainer2)
@@ -271,7 +279,7 @@ namespace SoundPanelProto
                 PanelContainer5.Controls.Add(DefaultSoundPnl3);
                 PanelContainer4.Controls.Add(DefaultSoundPnl2);
                 PanelContainer3.Controls.Add(DefaultSoundPnl1);
-
+                dock();
             }
 
         }
@@ -296,61 +304,73 @@ namespace SoundPanelProto
             dock();
         }
 
+        private void loadables() //temporary
+        {
+            LoadablePnl5.Visible = false;
+            LoadablePnl4.Visible = false;
+            LoadablePnl3.Visible = false;
+            LoadablePnl2.Visible = false;
+            LoadablePnl1.Visible = false;
+        }
+
+
         private void filenamee()//temporary
         {
-            FilenameLbl1.Text = "null1";
-            FilenameLbl2.Text = "null2";
-            FilenameLbl3.Text = "null3";
-            FilenameLbl4.Text = "null4";
-            FilenameLbl5.Text = "null5";
+            //FilenameLbl1.Text = "null1";
+            //FilenameLbl2.Text = "null2";
+            //FilenameLbl3.Text = "null3";
+            //FilenameLbl4.Text = "null4";
+            //FilenameLbl5.Text = "null5";
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            ///filenamee();
+            filenamee();
 
             container();
 
-            if (FilenameLbl5.Text != "null")
+            //kung ang FilenameLbl5 at FilenameLbl4 != null ay iaadd ang LoadablePnl4 at LoadablePnl5 sa PanelContainer1 at PanelContainer2
+
+            if (FilenameLbl5.Text != "null" && FilenameLbl4.Text != "null")
             {
-                PanelContainer2.Controls.Remove(DefaultSoundPnl1);
 
+                PanelContainer1.Controls.Add(LoadablePnl4);
                 PanelContainer2.Controls.Add(LoadablePnl5);
-                LoadablePnl5.Visible = true;
-                dock();
-
+                LoadablePnl4.Visible = true; 
+                LoadablePnl5.Visible=true;
             }
 
-            else
+            //at kung ang FilenameLbl5 at FilenameLbl4 == null ay iaadd ang DefaultSoundPnl4 at DefaultSoundPnl5 sa PanelContainer1 at PanelContainer2
+
+
+            else if (FilenameLbl5.Text == "null" && FilenameLbl4.Text == "null")
             {
-                PanelContainer2.Controls.Remove(LoadablePnl5);
+
+                PanelContainer1.Controls.Add(DefaultSoundPnl4);
                 PanelContainer2.Controls.Add(DefaultSoundPnl5);
             }
 
-            if (FilenameLbl4.Text != "null")
-            {
-                PanelContainer1.Controls.Remove(DefaultSoundPnl4);
+            
+            //kung ang FilenameLbl5 != null ay iaadd ang LoadablePnl5 sa PanelContainer2
 
-                PanelContainer1.Controls.Add(LoadablePnl4);
+            else if (FilenameLbl5.Text != "null")
+            {
+                PanelContainer2.Controls.Add(LoadablePnl5);
+                LoadablePnl5.Visible = true;
+
+                //at kung ang FilenameLbl5 ay != null ay iadd ang DefaultSoundPnl5 sa panel container 1
+
+                PanelContainer1.Controls.Add(DefaultSoundPnl5);
+
+            }
+
+            else if (FilenameLbl4.Text != "null")
+            {
+                PanelContainer2.Controls.Add(LoadablePnl4);
                 LoadablePnl4.Visible = true;
-                dock();
+
+                PanelContainer1.Controls.Add(DefaultSoundPnl5);
             }
-
-            else
-            {
-                if (FilenameLbl3.Text != "null" && PanelContainer1 != LoadablePnl5)
-                {
-                    PanelContainer1.Controls.Add(LoadablePnl3);
-                    LoadablePnl3.Visible = true;
-
-                }
-                else
-                {
-                    LoadablePnl3.Visible = false;
-                    PanelContainer1.Controls.Remove(LoadablePnl4);
-                    PanelContainer1.Controls.Add(DefaultSoundPnl4);
-                }
-
-            }
+            
 
             connection = new SqlConnection(connectionString);
 
@@ -361,8 +381,6 @@ namespace SoundPanelProto
 
             string SoundTitleLabel2 = DefaultSoundFileNameLbl2.Text;
             mr.AvatarRetriever(SoundTitleLabel2, DefaultSoundPicbox2);
-
-            //kung ang filename label sa loadable panel ay not equal sa null ay iaadd niya ito sa panelconatiner
 
 
         }
@@ -502,7 +520,7 @@ namespace SoundPanelProto
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Hindi mabuksan ang larawan: " + ex.Message);
+                        MessageBox.Show("Image cannot open: " + ex.Message);
                     }
                 }
             }
@@ -518,6 +536,11 @@ namespace SoundPanelProto
             media_retriever mr = new media_retriever();
             int soundIDToPlay = 1;
             mr.PlaySound(soundIDToPlay);
+        }
+
+        private void DefaultSoundFileNameLbl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

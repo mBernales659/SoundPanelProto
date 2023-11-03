@@ -177,6 +177,7 @@
             DefaultSoundFileNameLbl1.Size = new Size(38, 15);
             DefaultSoundFileNameLbl1.TabIndex = 18;
             DefaultSoundFileNameLbl1.Text = "label1";
+            DefaultSoundFileNameLbl1.Click += DefaultSoundFileNameLbl1_Click;
             // 
             // DefaultSoundBtn1
             // 
@@ -839,6 +840,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(816, 447);
+            Controls.Add(LoadablePnl5);
             Controls.Add(PanelContainer3);
             Controls.Add(PanelContainer2);
             Controls.Add(PanelContainer4);
@@ -848,11 +850,10 @@
             Controls.Add(PanelContainer1);
             Controls.Add(AddSoundPnl);
             Controls.Add(LoadablePnl1);
-            Controls.Add(LoadablePnl5);
             Controls.Add(LoadablePnl3);
-            Controls.Add(LoadablePnl2);
             Controls.Add(LoadablePnl4);
             Controls.Add(panel1);
+            Controls.Add(LoadablePnl2);
             Name = "Form1";
             Text = "Form1";
             WindowState = FormWindowState.Maximized;

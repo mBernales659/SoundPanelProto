@@ -8,6 +8,7 @@ namespace SoundPanelProto
 {
     public class media_retriever
     {
+
         SqlConnection connection;
         string connectionString = "Data Source=DESKTOP-VIJ33BO\\SQLEXPRESS; Initial Catalog=Mellowdy; Integrated Security=True";
         WMPLib.WindowsMediaPlayer Player = new WMPLib.WindowsMediaPlayer();
