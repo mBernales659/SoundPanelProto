@@ -31,7 +31,7 @@ namespace SoundPanelProto
             LoadablePnl5.Dock = DockStyle.Fill;
         }
 
-        private void Prev_btn_Click(object sender, EventArgs e)
+        private void Next_Btn_Click(object sender, EventArgs e)
         {
             //1st Possition
 
@@ -143,7 +143,7 @@ namespace SoundPanelProto
             }
 
         }
-        private void Next_Btn_Click(object sender, EventArgs e)
+        private void Prev_btn_Click(object sender, EventArgs e)
         {
             //1st possition
 
